@@ -135,4 +135,18 @@ REST_FRAMEWORK = {
  'DEFAULT_AUTHENTICATION_CLASSES': [ 
     'rest_framework_simplejwt.authentication.JWTAuthentication', 
     ], 
+     'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+
 }
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,  # отключаем BasicAuth
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': 'Добавьте токен в формате: Bearer <ваш токен>',
+        },  }, }

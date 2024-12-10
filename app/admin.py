@@ -1,6 +1,1 @@
 from django.contrib import admin
-
-# Импорт модели MyModel из текущего каталога (".")
-from .models import MyModel
-# Регистрация модели MyModel для административного сайта
-admin.site.register(MyModel)
